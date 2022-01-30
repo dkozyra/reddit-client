@@ -8,22 +8,24 @@ export const Main = (props) => {
           <a>
             <img src="/images/user.svg" alt="" />
             <div>
-              <span>Title</span>
-              <span>Info</span>
-              <span>Date</span>
+              <span>{props.article.title}</span>
+              <span>{props.article.display_name_prefixed}</span>
+              <span>Subscribers: {props.article.subscribers}</span>
             </div>
           </a>
-          <button>
+          {/* <button>
             <img src="/images/ellipsis.svg" alt="" />
-          </button>
+          </button> */}
         </div>
-        <div className="main-description">desc</div>
-        <div className="main-image">
+        <div className="main-description">
+          {props.article.public_description}
+        </div>
+        {/* <div className="main-image">
           <a>
             <img src="/images/example.jpg" alt="" />
           </a>
-        </div>
-        <ul className="main-social">
+        </div> */}
+        {/* <ul className="main-social">
           <li>
             <button>
               <img src="/images/like.svg" alt="" />
@@ -34,15 +36,15 @@ export const Main = (props) => {
           <li>
             <a>5 comments</a>
           </li>
-        </ul>
+        </ul> */}
         <div className="main-social-buttons">
           <button>
-            <img src="/images/like.svg" alt="" />
-            <span>Like</span>
+            <img src="/images/join.svg" alt="" />
+            <span>Join</span>
           </button>
           <button>
-            <img src="/images/comment.svg" alt="" />
-            <span>Comment</span>
+            <img src="/images/report.svg" alt="" />
+            <span>Report</span>
           </button>
         </div>
       </div>
