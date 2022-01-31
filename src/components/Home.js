@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Main } from "./Main";
 import { Categories } from "./Categories";
+import { Subreddit } from "./Subreddit";
+import { Routes, Route } from "react-router-dom";
 
 export const Home = (props) => {
   const [articles, setArticles] = useState([]);
-  const [phrase, setPhrase] = useState("javascript");
+  const [phrase, setPhrase] = useState();
 
   useEffect(() => {
     // fetch(`https://www.reddit.com/search/.json?q=${phrase}`)
@@ -34,11 +36,19 @@ export const Home = (props) => {
     <div className="home-container">
       <div className="home-layout">
         <div className="home-main">
-          {articles != null
-            ? articles.map((article, index) => (
-                <Main key={index} article={article.data} />
-              ))
-            : ""}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                articles != null
+                  ? articles.map((article, index) => (
+                      <Main key={index} article={article.data} />
+                    ))
+                  : ""
+              }
+            />
+            <Route path="/subreddit/r/:reddit" element={<Subreddit />} />
+          </Routes>
         </div>
         <div className="home-categories">
           <Categories />
