@@ -11,7 +11,12 @@ export const Header = (props) => {
         </span>
         <div className="header-search">
           <div>
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={(e) => props.onChangeHandler(e.target.value)}
+              value={props.phrase}
+            />
           </div>
           <div className="header-searchIcon">
             <img src="/images/search-icon.svg" alt="" />

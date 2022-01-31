@@ -6,12 +6,11 @@ import { Routes, Route } from "react-router-dom";
 
 export const Home = (props) => {
   const [articles, setArticles] = useState([]);
-  const [phrase, setPhrase] = useState();
 
   useEffect(() => {
     // fetch(`https://www.reddit.com/search/.json?q=${phrase}`)
     // fetch(`https://www.reddit.com/r/${phrase}.json`)
-    fetch(`https://www.reddit.com/subreddits/search.json?q=${phrase}`)
+    fetch(`https://www.reddit.com/subreddits/search.json?q=${props.phrase}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -28,7 +27,7 @@ export const Home = (props) => {
           "There has been a problem with your fetch operation: " + e.message
         );
       });
-  }, [phrase]);
+  }, [props.phrase]);
 
   // console.log(articles);
 
