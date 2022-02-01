@@ -1,7 +1,6 @@
 {
   "name": "reddit-client",
   "version": "0.1.0",
-  "homepage": "https://dkozyra.github.io/reddit-client",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
